@@ -7,7 +7,8 @@ const Mixins = require('./Mixins.js')
 
 module.exports = window.Magnet;
 
-console.log('');
+console.log('morning fffda3888333vid');
+console.log(typeof io);
 
 window.Magnet = class Magnet {
   constructor({target, id}){
