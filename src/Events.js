@@ -1,4 +1,4 @@
-export default class Events{
+module.exports = class Events{
   constructor(parent){
     this._parent = parent;
     this._startX = 0;

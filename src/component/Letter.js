@@ -1,6 +1,6 @@
-import Component from './Component.js'
+const Component = require('./Component.js')
 
-export default class Letter extends Component{
+module.exports = class Letter extends Component{
   constructor(config, parent){
     super(config, parent);
     this._text = config.text;

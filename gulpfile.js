@@ -4,6 +4,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const webserver = require('gulp-webserver');
 const watch = require('gulp-watch');
+const browserify = require('gulp-browserify');
 
 gulp.task('build', () => {
   return gulp.src('src/*')
@@ -28,16 +29,20 @@ gulp.task('server', () => {
 
 gulp.task('watch', () => {
   return watch('src/*', function () {
-    gulp.src('src/*')
+    gulp.src('src/Magnet.js')
+      .pipe(browserify({
+        insertGlobals : true,
+        debug : !gulp.env.production
+      }))
+      .pipe(concat('magnet.min.js'))
       .pipe(babel({
         presets: ["env"]
       }))
-      .pipe(concat('magnet.min.js'))
       .pipe(uglify())
       .pipe(gulp.dest('dist'));
   });
 });
 
-gulp.task('dev', ['watch','build'])
+gulp.task('dev', ['watch','server'])
 
 gulp.task('default', ['build'] );

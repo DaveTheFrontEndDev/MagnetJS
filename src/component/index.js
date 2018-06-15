@@ -1,5 +1,5 @@
-import Letter from './Letter.js'
+const Letter = require('./Letter.js')
 
-export default {
+module.exports = {
   Letter
 }

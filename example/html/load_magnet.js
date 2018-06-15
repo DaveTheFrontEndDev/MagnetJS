@@ -1,4 +1,5 @@
-import Magnet from './magnet.min.js';
+// import Magnet from './browserify/Magnet.js';
+// const Magnet = require('broswerify/Magnet.js');
 
 var board = "";
 

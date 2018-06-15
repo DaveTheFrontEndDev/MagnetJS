@@ -1,4 +1,4 @@
-export default class Mixins{
+module.exports = class Mixins{
   constructor(){
   }
 

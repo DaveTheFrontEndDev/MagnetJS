@@ -1,4 +1,4 @@
-export default class Socket{
+module.exports = class Socket{
   constructor(parent){
     this._parent = parent;
     this.initSocket();

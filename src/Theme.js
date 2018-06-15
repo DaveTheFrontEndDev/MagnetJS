@@ -1,4 +1,4 @@
-export default class Theme{
+module.exports = class Theme{
 
   /**
    * Initiate theme with config

@@ -1,4 +1,4 @@
-export default class View{
+module.exports = class View{
   constructor(me){
     this._parent = me;
     this._items = new Map();

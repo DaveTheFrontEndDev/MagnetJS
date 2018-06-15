@@ -1,12 +1,15 @@
+const component = require('./component/index.js')
+const View = require('./View.js')
+const Theme = require('./Theme.js')
+const Events = require('./Events.js')
+const Socket = require('./Socket.js')
+const Mixins = require('./Mixins.js')
 
-import component from './component/index.js'
-import View from './View.js'
-import Theme from './Theme.js'
-import Events from './Events.js'
-import Socket from './Socket.js'
-import Mixins from './Mixins.js'
+module.exports = window.Magnet;
 
-export default class Magnet {
+console.log('');
+
+window.Magnet = class Magnet {
   constructor({target, id}){
     this.initConfig(target, id);
     this.initClasses();

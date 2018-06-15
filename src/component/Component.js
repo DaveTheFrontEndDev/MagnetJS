@@ -1,4 +1,4 @@
-export default class Component {
+module.exports = class Component {
   constructor(config, parent){
     this._parent = parent;
     this._id = config.id;
