@@ -10,8 +10,15 @@ module.exports = window.Magnet;
 
 window.Magnet = class Magnet {
   constructor(config){
-    console.log('Magnet started')
     this.initConfig(config);
+    // this.initClasses();
+  }
+
+  /**
+   * Mount the board
+   */
+  mount(){
+    console.log('Magnet started');
     this.initClasses();
   }
 

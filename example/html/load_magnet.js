@@ -1,7 +1,3 @@
-// import Magnet from './browserify/Magnet.js';
-// const Magnet = require('broswerify/Magnet.js');
-
-var board = "";
 
 var config = {
   target: 'root',
@@ -17,10 +13,10 @@ var config = {
     }
   },
   theme: [
-    {code: "background", id: 1, key: "rgb", value: "255,100,255"},
-    {code: "color", id: 1, key: "rgb", value: "32,59,87"},
-    {code: "color", id: 2, key: "rgb", value: "79,159,161"},
-    {code: "color", id: 3, key: "rgb", value: "0,201,151"},
+    {code: "background", id: 1, key: "rgb", value: "50,50,50"},
+    {code: "color", id: 1, key: "rgb", value: "132,159,187"},
+    {code: "color", id: 2, key: "rgb", value: "179,159,161"},
+    {code: "color", id: 3, key: "rgb", value: "110,201,151"},
     {code: "color", id: 4, key: "rgb", value: "183,101,191"},
     {code: "color", id: 5, key: "rgb", value: "255,132,107"},
     {code: "letter", id: 1, key: "fontFamily", value: "'Baloo Bhaina', cursive"},
@@ -33,8 +29,8 @@ var config = {
   ]
 };
 
+const board = new Magnet({ target: 'root' });
+
 window.onload = function () {
-
-  board = new Magnet(config);
-
+  board.mount();
 };

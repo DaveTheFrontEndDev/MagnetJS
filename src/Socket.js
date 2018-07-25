@@ -13,7 +13,7 @@ module.exports = class Socket{
     const me = this;
     this._socketConnected = false;
     if(typeof io == 'undefined'){
-      console.log('Socket.io not enabled, generating static board');
+      console.info('Socket.io not enabled, generating static board');
       this._socketEnabled = false;
       this._socket = {
         emit: () => {

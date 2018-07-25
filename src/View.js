@@ -53,10 +53,7 @@ module.exports = class View{
     spinner.appendChild(dot1);
     spinner.appendChild(dot2);
     wrapper.appendChild(board);
-    console.log('removed');
     root.innerHTML = '';
-    debugger;
-    console.log('adding');
     root.appendChild(wrapper);
     root.appendChild(stats);
     root.appendChild(spinner);
@@ -66,7 +63,6 @@ module.exports = class View{
    * Add Item
    */
   addItem(item){
-    console.log('adding item');
     this.setItem(item.id, new this._parent.component[item.type](item, this._parent));
     this.renderItems();
   }
@@ -85,7 +81,6 @@ module.exports = class View{
     button.innerHTML = 'Create';
     message.id = 'message';
     button.addEventListener('click', () => {
-      console.log('clicked', document.getElementsByClassName('message'));
       document.getElementsByClassName('message').outerHTML = '';
       document.getElementById(`${this._parent._id}_board`).removeChild(document.getElementById('message'));
       me._parent.Socket._socket.emit('start', {id: me._parent._id});
