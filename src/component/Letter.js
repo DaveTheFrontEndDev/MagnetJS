@@ -11,7 +11,13 @@ module.exports = class Letter extends Component{
   }
 
   init(){
+    /**
+     * Add parent default class information
+     */
     super.init();
+    /**
+     * Insert custom default class information
+     */
     this._defaultClass = Object.assign({
       fontStyle: 'normal',
       fontSize: '40px',
@@ -20,6 +26,9 @@ module.exports = class Letter extends Component{
       height: '40px',
       outline: '1px solid transparent'
     },this._defaultClass);
+    /**
+     * Dynamically insert class
+     */
     this._parent.View.addCSSClass(this._type, this._defaultClass);
   }
 
@@ -38,4 +47,5 @@ module.exports = class Letter extends Component{
     document.getElementById(this._id).appendChild(pulse);
     setTimeout(() => { document.getElementById(me._id).removeChild(pulse); },10000);
   }
+
 }

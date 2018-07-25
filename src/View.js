@@ -16,7 +16,8 @@ module.exports = class View{
     this._wrapperCSS = {
       width: '100%',
       height: '100%',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      position: 'relative'
     }
 
     this._boardCSS = {
@@ -35,7 +36,7 @@ module.exports = class View{
     const wrapper = document.createElement("div");
     wrapper.id = `${this._parent._id}_wrapper`;
     wrapper.className = "wrapper";
-    this._parent.Mixins.applyStyle(wrapper, this._boardCSS);
+    this._parent.Mixins.applyStyle(wrapper, this._wrapperCSS);
     const board = document.createElement("div");
     board.id = `${this._parent._id}_board`;
     this._parent.Mixins.applyStyle(board, this._boardCSS);
@@ -52,6 +53,10 @@ module.exports = class View{
     spinner.appendChild(dot1);
     spinner.appendChild(dot2);
     wrapper.appendChild(board);
+    console.log('removed');
+    root.innerHTML = '';
+    debugger;
+    console.log('adding');
     root.appendChild(wrapper);
     root.appendChild(stats);
     root.appendChild(spinner);
@@ -137,8 +142,8 @@ module.exports = class View{
 
   setWrapperSize(){
     const wrapper = document.getElementById(`${this._parent._id}_wrapper`);
-    this._wrapperX = wrapper.clientWidth;
-    this._wrapperY = wrapper.clientHeight;
+    this._wrapperX = document.getElementById(this._parent._root).offsetWidth;
+    this._wrapperY = document.getElementById(this._parent._root).offsetHeight;
   }
 
   loadPosition(){
@@ -206,6 +211,9 @@ module.exports = class View{
     }
   }
 
+  /**
+   * Create a css class from an object
+   */
   addCSSClass(className, classDetails){
     const style = document.createElement('style');
     style.type = 'text/css';
@@ -214,6 +222,9 @@ module.exports = class View{
     this._classNames.add(className);
   }
 
+  /**
+   * Has the class been dynamicaly loaded?
+   */
   hasClass(className){
     return this._classNames.has(className);
   }

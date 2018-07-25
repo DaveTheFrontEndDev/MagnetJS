@@ -1,3 +1,5 @@
+const Mixins = require('../Mixins');
+
 module.exports = class Component {
   constructor(config, parent){
     this._parent = parent;
@@ -7,6 +9,9 @@ module.exports = class Component {
     this._type = 'component';
   }
 
+  /**
+   * Initialise default values (css class defaults)
+   */
   init(){
     this._defaultClass = {
       position: 'absolute',
@@ -37,6 +42,9 @@ module.exports = class Component {
     return itemDiv;
   }
 
+  /**
+   * Set the position of the item as and emit to socket (as if it was set by the current user)
+   */
   setLocalPosition(x, y){
     this._x = x;
     this._y = y;
@@ -48,6 +56,9 @@ module.exports = class Component {
     })
   }
 
+  /**
+   * Set the position of the item and create pulse animation (as if it was set by a different user)
+   */
   setRemotePosition(x, y, time){
     this._x = x;
     this._y = y;
@@ -55,11 +66,19 @@ module.exports = class Component {
     if(typeof this.moveAnimation === 'function') this.moveAnimation();
   }
 
+  /**
+   * Animate the movement of the item
+   */
   animateSetPosition(time){
     const xy = this._parent.View.convertXY(this._x, this._y, 'board');
-    $('#'+this._id).animate({
-      left: xy.x,
-      top: xy.y
-    }, time || 200);
+    const item = document.getElementById(this._id);
+
+    this._parent.Mixins.makeAnimation(item, 'left', xy.x, time || 200);
+    this._parent.Mixins.makeAnimation(item, 'top', xy.y, time || 200);
+
+    // $('#'+this._id).animate({
+    //   left: xy.x,
+    //   top: xy.y
+    // }, time || 200);
   }
 }

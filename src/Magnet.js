@@ -4,15 +4,14 @@ const Theme = require('./Theme.js')
 const Events = require('./Events.js')
 const Socket = require('./Socket.js')
 const Mixins = require('./Mixins.js')
+const Generator = require('./Generator')
 
 module.exports = window.Magnet;
 
-console.log('morning fffda3888333vid');
-console.log(typeof io);
-
 window.Magnet = class Magnet {
-  constructor({target, id}){
-    this.initConfig(target, id);
+  constructor(config){
+    console.log('Magnet started')
+    this.initConfig(config);
     this.initClasses();
   }
 
@@ -21,11 +20,12 @@ window.Magnet = class Magnet {
    * @param target
    * @param id
    */
-  initConfig(target, id){
-    this._root = target;
-    this._id = id;
+  initConfig(config, id){
+    this._root = config.target;
+    this._id = config.id ? config.id : 'local';
     this._name = '';
     this._description = '';
+    this._config = new Generator(config)
   }
 
   /**

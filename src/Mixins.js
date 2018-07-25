@@ -33,7 +33,6 @@ module.exports = class Mixins{
   convertToCSSString(cssObject){
     const entries = Object.entries(cssObject);
     const cssArray = [];
-    console.log(cssObject);
     for(const entry of entries){
       for(let i = 0; i < entry[0].length; i++){
         if(entry[0].charAt(i) === entry[0].charAt(i).toUpperCase()){
@@ -43,5 +42,30 @@ module.exports = class Mixins{
       cssArray.push(entry[0]+': '+entry[1]);
     }
     return cssArray.join('; ');
+  }
+
+  makeAnimation(item, value, to, duration){
+    const start = item.style[value].split('px')[0];
+    const change = to - start;
+    const increment = 10;
+    let currentTime = 0;
+    const easeInOutQuad = function(t, b, c, d) {
+      t /= d/2;
+      if (t < 1) return c/2*t*t + b;
+      t--;
+      return -c/2 * (t*(t-2) - 1) + b;
+    };
+
+    var animateScroll = function(){
+      currentTime += increment;
+      var val = easeInOutQuad(currentTime, start, change, duration);
+      // console.log(value, (parseFloat(start) + parseFloat(val)), val, duration, currentTime);
+      item.style[value] = currentTime == duration ? to : (parseFloat(start) + parseFloat(val));
+      if(currentTime < duration) {
+        setTimeout(animateScroll, increment);
+      }
+    };
+    animateScroll();
+
   }
 }
