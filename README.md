@@ -5,15 +5,15 @@ MagnetJS
 
 _An open source javascript library that allows you to create interactive fridge magnets._
 
-__Live Example:__ [www.online-fridge.com/example](www.online-fridge.com/example)
+__Live Example:__ [www.online-fridge.com/example](http://www.online-fridge.com/example)
 
-__Live Example (with dark theme):__ [www.online-fridge.com/codetheme](www.online-fridge.com/codetheme)
+__Live Example (with dark theme):__ [www.online-fridge.com/codetheme](http://www.online-fridge.com/codetheme)
 
 ## Overview
 
 MagnetJS is an open source javascript library for creating and interacting with virtual fridge magnets.
 
-The library can be used in local mode _(local movement of magnets)_, or using the [online-fridge.com](www.online-fridge.com) api (anybody can move the magnets in real-time).
+The library can be used in local mode _(local movement of magnets)_, or using the [online-fridge.com](http://www.online-fridge.com) api (anybody can move the magnets in real-time).
 
 It is designed to be modular and include other components in the future (for example post-it notes).
 
@@ -50,6 +50,22 @@ window.onload = () => {
 And Vualá!!
 
 ![MagnetJS Example](docs/resources/magnetjs-example.gif)
+
+## Making changes
+
+To make changes to the library and test it out.
+
+```console
+npm install
+```
+
+And run the example app:
+
+```console
+npm start
+```
+
+The files that load the board are in `example/html/.`.
 
 ## Methods
 
@@ -101,7 +117,7 @@ An object containing options for the items. These are defined in the component c
 
 An array of styles to be used as a theme for the board and its content.
 
-If the structure of this config seems a little odd it is because it must also mimic the database structure for the use of the [online-fridge.com](www.online-fridge.com) api.
+If the structure of this config seems a little odd it is because it must also mimic the database structure for the use of the [online-fridge.com](http://www.online-fridge.com) api.
 
 Each style is a javascript object with the following structure:
 
@@ -177,7 +193,7 @@ var config = {
 
 ## Online Mode
 
-To enable the use of the [online-fridge.com api](www.online-fridge.com) you must:
+To enable the use of the [online-fridge.com api](http://www.online-fridge.com) you must:
 
 Load socket.io from online-fridge.com
 
