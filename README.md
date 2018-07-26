@@ -215,3 +215,13 @@ For fun.... mostly. This was also my project for familiarising myself with socke
 ### Why did you not choose canvas?
 
 The decision for not using canvas was based on the idea that anybody can add to their own components. As DOM is more common  I decided to not use canvas.
+
+## What I would like to change
+
+- There is some ambiguity between how classes are accessed, I would like to re-evaluate the class structure with [SOLID](https://deviq.com/solid/) design.
+
+- I would like to look at better alternative ways to load css, the current method of dynamically adding stylesheets to the webpage is probably not the bet option.
+
+- Move the config initialisation out of the socket class, this is more of a TODO as a result from originally not designing it to work offline.
+
+- Make this compatible for modern javascript libraries like ReactJS and VueJS. I started this project early on in my career as a developer and was not fully aware of these technologies and their importance at the time.
