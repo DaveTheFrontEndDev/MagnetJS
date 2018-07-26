@@ -1,25 +1,26 @@
 
 var config = {
-  target: 'root',
-  id: 'test',
-  width: 1000,
-  height: 1000,
+  id: 'test', // ID of the board (if using sockets)
+  target: 'root', // ID of the element to build the board onto
+  width: 1000, // Width of the board (px)
+  height: 1000, // Height of the board (px)
   items: {
-    spawn: 100,
+    spawn: 100, // Spawn 100 items to the board
     options: {
-      text: ['Toast','is','Food','for','my','belly'],
-      color: [1,2,3,4,5],
-      type: 'Letter'
+      text: ['Toast','is','Food','for','my','belly'], // Text combinations to create the items with.
+      color: [1,2,3,4,5], // The themes color unique identifiers.
+      type: 'Letter' // The item type
     }
   },
   theme: [
-    {code: "background", id: 1, key: "rgb", value: "50,50,50"},
-    {code: "color", id: 1, key: "rgb", value: "132,159,187"},
-    {code: "color", id: 2, key: "rgb", value: "179,159,161"},
-    {code: "color", id: 3, key: "rgb", value: "110,201,151"},
-    {code: "color", id: 4, key: "rgb", value: "183,101,191"},
-    {code: "color", id: 5, key: "rgb", value: "255,132,107"},
-    {code: "letter", id: 1, key: "fontFamily", value: "'Baloo Bhaina', cursive"},
+    {code: "background", id: 1, key: "rgb", value: "50,50,50"}, // Set the board background to rgb(50,50,50)
+    {code: "color", id: 1, key: "rgb", value: "132,159,187"}, // First theme color
+    {code: "color", id: 2, key: "rgb", value: "179,159,161"}, // Second theme color
+    {code: "color", id: 3, key: "rgb", value: "110,201,151"}, // Third theme color
+    {code: "color", id: 4, key: "rgb", value: "183,101,191"}, // Fourth theme color
+    {code: "color", id: 5, key: "rgb", value: "255,132,107"}, // Fifth theme color
+    {code: "letter", id: 1, key: "fontFamily", value: "'Baloo Bhaina', cursive"}, // Font family for `letter` component
+    // Text shadow for the `letter` component that uses the theme color to build a shade.
     {
       code: "letter",
       id: 1,
