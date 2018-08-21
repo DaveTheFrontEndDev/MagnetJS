@@ -1,9 +1,12 @@
-![Magnet JS](docs/resources/magnetjs-title.gif)
+ ![Magnet JS](docs/resources/magnetjs-title.gif)
 
-MagnetJS
-=========
+#MagnetJS
 
-_An open source javascript library that allows you to create interactive fridge magnets._
+> An open source javascript library that allows you to create interactive fridge magnets.
+
+[![npm version](http://img.shields.io/npm/v/magnetjs.svg?style=flat)](https://npmjs.org/package/magnetjs "View this project on npm")
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![npm downloads](https://img.shields.io/npm/dt/magnetjs.svg)](https://npmjs.org/package/magnetjs "View this project on npm")
 
 __Live Example:__ [www.online-fridge.com/example](http://www.online-fridge.com/example)
 
@@ -241,3 +244,22 @@ The decision for not using canvas was based on the idea that anybody can add to 
 - Move the config initialisation out of the socket class, this is more of a TODO as a result from originally not designing it to work offline.
 
 - Make this compatible for modern javascript libraries like ReactJS and VueJS. I started this project early on in my career as a developer and was not fully aware of these technologies and their importance at the time.
+
+## Release History
+
+* 0.1.0
+    * The first proper release. Includes all core functionality for magnets and socket.io implementation.
+    
+## Meta
+
+__MrVann__ - [https://github.com/MrVann](https://github.com/MrVann)
+
+Distributed under the MIT license. See [``LICENSE``](LICENSE) for more information.
+
+## Contributing
+
+1. Fork it (<https://github.com/MrVann/MagnetJS/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
