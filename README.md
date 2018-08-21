@@ -1,6 +1,6 @@
  ![Magnet JS](docs/resources/magnetjs-title.gif)
 
-#MagnetJS
+# MagnetJS
 
 > An open source javascript library that allows you to create interactive fridge magnets.
 
