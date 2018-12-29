@@ -8,15 +8,15 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![npm downloads](https://img.shields.io/npm/dt/magnetjs.svg)](https://npmjs.org/package/magnetjs "View this project on npm")
 
-__Live Example:__ [www.online-fridge.com/example](http://www.online-fridge.com/example)
+__Live Example:__ [www.fridgeee.com/example](http://www.fridgeee.com/example)
 
-__Live Example (with dark theme):__ [www.online-fridge.com/codetheme](http://www.online-fridge.com/codetheme)
+__Live Example (with dark theme):__ [www.fridgeee.com/codetheme](http://www.fridgeee.com/codetheme)
 
 ## Overview
 
 MagnetJS is an open source javascript library for creating and interacting with virtual fridge magnets.
 
-The library can be used in local mode _(local movement of magnets)_, or using the [online-fridge.com](http://www.online-fridge.com) api (anybody can move the magnets in real-time).
+The library can be used in local mode _(local movement of magnets)_, or using the [fridgeee.com](http://www.fridgeee.com) api (anybody can move the magnets in real-time).
 
 It is designed to be modular and include other components in the future (for example post-it notes).
 
@@ -82,7 +82,7 @@ All values apart from the target are optional, however if you include a theme or
 
 ### id
 
-The `id:` value is __not__ the target element for your board. This is used to identify the board when using online mode (see [Online Mode](#Online-Mode)). The board can also be viewed by visiting www.online-fridge.com/{id here}.
+The `id:` value is __not__ the target element for your board. This is used to identify the board when using online mode (see [Online Mode](#Online-Mode)). The board can also be viewed by visiting www.fridgeee.com/{id here}.
 
 ### target
 
@@ -196,12 +196,12 @@ var config = {
 
 ## Online Mode
 
-To enable the use of the [online-fridge.com api](http://www.online-fridge.com) you must:
+To enable the use of the [fridgeee.com api](http://www.fridgeee.com) you must:
 
 Load socket.io from online-fridge.com
 
 ```html
-<script src="http://www.online-fridge.com/socket.io/socket.io.js"></script>
+<script src="http://www.fridgeee.com/socket.io/socket.io.js"></script>
 ```
 
 Include the id of the board you want to access in the config.
